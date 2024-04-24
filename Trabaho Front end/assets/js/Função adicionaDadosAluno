@@ -1,0 +1,34 @@
+function adicionaDadosAluno(event) {
+    event.preventDefault(); // Evita o envio do formulário
+
+    // Captura dos dados do formulário
+    var nome = document.getElementById('input_nome').value;
+    var ra = document.getElementById('input_ra').value;
+    var email = document.getElementById('input_email').value;
+
+    // Criação de uma nova linha na tabela
+    var tabela = document.getElementById('tabela_aluno');
+    var novaLinha = tabela.insertRow();
+
+    // Adiciona células na nova linha
+    var celulaNome = novaLinha.insertCell();
+    var celulaRa = novaLinha.insertCell();
+    var celulaEmail = novaLinha.insertCell();
+    var celulaMedia1 = novaLinha.insertCell();
+    var celulaMedia2 = novaLinha.insertCell();
+    var celulaMediaFinal = novaLinha.insertCell();
+    var celulaStatus = novaLinha.insertCell();
+    var celulaAcoes = novaLinha.insertCell();
+
+    // Atribui os valores às células
+    celulaNome.textContent = nome;
+    celulaRa.textContent = ra;
+    celulaEmail.textContent = email;
+    celulaMedia1.textContent = "-";
+    celulaMedia2.textContent = "-";
+    celulaMediaFinal.textContent = "-";
+    celulaStatus.textContent = "-";
+    celulaAcoes.innerHTML = '<button onclick="editarAluno(this)">Editar</button><button onclick="excluirAluno(this)">Excluir</button>';
+}
+
+document.getElementById('FormAluno').addEventListener('submit', adicionaDadosAluno);
