@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+            <title>Gestão Escolar </title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <h1> Cadastro de Alunos</h1>
+            <form id="FormAluno">
+            <label for="input_nome">Nome:</label>
+            <input type="text"  id="input_nome" required><br>
+            <label for="input_email"> E-mail:</label> 
+            <input type="email" id="input_email" required> <br>
+            <label for="input_ra" >RA:</label>
+            <input type="text" id="input_ra" required><br>
+            <button type="submit">Adicionar Aluno</button>
+
+            </form>
+
+            <h1> Cadastro de Notas</h1>
+            <form id="FormNotas">
+                <label for="input_prova_1"> Prova 1°  Bimestre:</label>
+                <input type="number" id="input_prova_1"  min="0" max="8" step="0.1" required><br>
+                <label for="input_aep_1"> AEP 1° Bimestre:</label>
+                <input type="number" id="input_aep_1" min="0" max="1" step="0.1" required><br>
+                <label for="input_prova_integrada_1"> Prova Integrada  1° Bimestre:</label>
+                <input type="number" id="input_prova_integrada_1" min="0" max="1" required> <br>
+                <label for="input_prova_2"> Prova 2° Bimestre:</label>
+                <input type="number" id="input_prova_2" min="0" max="8" step="0.1" required> <br>
+                <label for="input_aep_2">AEP 2° Bimestre:</label>
+                <input type="number" id="input_aep_2" min="0" max="1" step="0.1"><br>
+                <label  for="input_prova_integrada_2">Prova Integrada 2° Bimestre:</label>
+                <input type="number" id="input_prova_integrada_2" min="0" max="1" step="0.1" required> <br>
+                <button type="submit">Adicionar Notas</button>
+
+            </form>
+
+            <h1>Dados dos Alunos</h1>
+            <table id="tabela_aluno">
+                <thead>
+                    <tr>
+                        <th> Nome </th>
+                        <th> RA </th>
+                        <th> Email </th>
+                        <th> Prova 1°  Bimestre </th>
+                        <th> AEP 1° Bimestre </th>
+                        <th> Prova Integrada  1° Bimestre </th>
+                        <th> Prova 2° Bimestre </th>
+                        <th> AEP 2° Bimestre </th>
+                        <th> Prova Integrada 2° Bimestre </th>
+                        <th> Média 1° Bimestre</th>
+                        <th> Média 2° Bimestre</th>
+                        <th> Média Final </th>
+                        <th>  Situação </th>
+                        <th> Ações </th>
+                        </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <script src="script.js" ></script>
+            </body>
+    </html>
