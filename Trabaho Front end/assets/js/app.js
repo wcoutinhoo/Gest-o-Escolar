@@ -1,3 +1,19 @@
+function validaSeExisteaAlgosalvoNoLocalStorageEMostraNaTela() {
+    const localStorage = window.localStorage
+    if (localStorage.getItem('novoAluno','FormNotas','tabela_aluno') != null) {
+        const nãoseiAinda = JSON.parse(localStorage.getItem('Cadastros','FormNotas2','cadastroNotas','tabela_aluno'))
+        nãoseiAinda.daforEach(tarefa => {
+            const nãoseiAinda = document.getElementById('Cadastros','FormNotas2','cadastroNotas','tabela_aluno')
+            
+            if (tarefa.status === 'fechada') {
+               novoItem.style.textDecoration =  'line-through'    
+            }
+            listaTarefnãoseiAinda.appendChild(novoItem)
+        });
+    }
+}
+
+
 function adicionaDadosAluno(){
     const nomeAluno = document.getElementById('input_nome').value;
     const raAluno = document.getElementById('input_ra').value;
