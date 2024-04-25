@@ -4,12 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
     background-color: #ffffff;
-    height: 100vh;
+}
+
+.Cadastros {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.form-containercadastro {
+    flex: 1;
+    margin: 0 10px;
 }
 
 /* Estilo dos formulários */
@@ -18,12 +27,22 @@ form {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
     max-width: 400px; /* Definindo uma largura máxima para o formulário */
-    margin: auto; /* Centralizando o formulário */
+    background-color: rgba(204, 204, 204, 0.7); /* Fundo cinza com opacidade reduzida */
+    border-radius: 10px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title1{
+   font-size: 1.8em;
+   margin-bottom: 10%;
 }
 
 form label {
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 form input[type="text"],
@@ -39,18 +58,41 @@ form button {
 }
 
 form button {
-    background-color: #007bff;
+    background-color: #160358;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #160358;
 }
+
 /* Estilo dos títulos */
 h1 {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
 }
