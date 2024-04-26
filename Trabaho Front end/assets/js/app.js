@@ -28,6 +28,7 @@ function validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela() {
 }
 
 
+
 function adicionaDadosAluno() {
     const nomeAluno = document.getElementById('input_nome').value;
     const raAluno = document.getElementById('input_ra').value;
@@ -38,6 +39,7 @@ function adicionaDadosAluno() {
     const aep2A = document.getElementById('input_aep_2').value;
     const integrada2 = document.getElementById('input_prova_integrada_2').value;
     const prova2 = document.getElementById('input_prova_2').value;
+
 
 
     if (nomeAluno.trim() !== '' && raAluno.trim() !== '' && emailAluno.trim() !== '' && alunoaep1.trim() !== '' && integrada1.trim() !== '' && prova1.trim() !== '' && aep2A.trim() !== '' && integrada2.trim() !== '' && prova2.trim() !== '') {
@@ -74,6 +76,10 @@ function criaNovoAluno(aluno) {
     emailCelula.textContent = aluno.email;
     novoItem.appendChild(emailCelula);
 
+    const prova1Celula = document.createElement('td');
+    prova1Celula.textContent = aluno.prova1;
+    novoItem.appendChild(prova1Celula);
+
     const aep1Celula = document.createElement('td');
     aep1Celula.textContent = aluno.aep1;
     novoItem.appendChild(aep1Celula);
@@ -82,9 +88,9 @@ function criaNovoAluno(aluno) {
     integrada1Celula.textContent = aluno.integrada1;
     novoItem.appendChild(integrada1Celula);
 
-    const prova1Celula = document.createElement('td');
-    prova1Celula.textContent = aluno.prova1;
-    novoItem.appendChild(prova1Celula);
+    const prova2Celula = document.createElement('td');
+    prova2Celula.textContent = aluno.prova2;
+    novoItem.appendChild(prova2Celula);
 
     const aep2Celula = document.createElement('td');
     aep2Celula.textContent = aluno.aep2;
@@ -94,10 +100,6 @@ function criaNovoAluno(aluno) {
     integrada2Celula.textContent = aluno.integrada2;
     novoItem.appendChild(integrada2Celula);
 
-    const prova2Celula = document.createElement('td');
-    prova2Celula.textContent = aluno.prova2;
-    novoItem.appendChild(prova2Celula);
-
     const media1Celula = document.createElement('td');
     media1Celula.textContent = aluno.media1;
     novoItem.appendChild(media1Celula);
@@ -105,6 +107,14 @@ function criaNovoAluno(aluno) {
     const media2Celula = document.createElement('td');
     media2Celula.textContent = aluno.media2;
     novoItem.appendChild(media2Celula);
+
+    const mediaFinalCelula = document.createElement('td');
+    mediaFinalCelula.textContent = aluno.mediaFinal;
+    novoItem.appendChild(mediaFinalCelula);
+
+    const situaçaoCelula = document.createElement('td');
+    situaçaoCelula.textContent = determinarsituaçao(parseFloat(aluno.mediaFinal)); 
+    novoItem.appendChild(situaçaoCelula); 
 
     listaAlunos.appendChild(novoItem);
 
@@ -152,26 +162,28 @@ function determinarsituaçao(mediafinal) {
     }
 }
 
-function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1, aep2A, integrada2, prova2, m1, m2) {
-    m1 = media1b(parseFloat(prova1), parseFloat(alunoaep1), parseFloat(integrada1));
-    m2 = media2b(parseFloat(prova2), parseFloat(aep2A), parseFloat(integrada2));
+function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1, aep2A, integrada2, prova2) {
+        m1 = media1b(parseFloat(prova1), parseFloat(alunoaep1), parseFloat(integrada1));
+        m2 = media2b(parseFloat(prova2), parseFloat(aep2A), parseFloat(integrada2));
+        mediaFinalResult = mediaFinal(m1, m2);
     return {
         ra: raAluno,
         nome: nomeAluno,
         email: emailAluno,
+        prova1: prova1,
         aep1: alunoaep1,
         integrada1: integrada1,
-        prova1: prova1,
+        prova2: prova2,
         aep2: aep2A,
         integrada2: integrada2,
-        prova2: prova2,
         media1: m1.toFixed(2),
         media2: m2.toFixed(2),
+        mediaFinal: mediaFinalResult.toFixed(2),
     }
 }
 
 
-validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela()
+validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela();
 
 
 function excluirAluno() {
@@ -183,3 +195,13 @@ function excluirAluno() {
     localStorage.setItem('alunos', JSON.stringify(alunosArmazenados));
     tabelaAlunos.deleteRow(linha.rowIndex);
 }
+
+function habilitaEdicao(adicionaDadosAluno) {
+    const textoItem = itemLista.firstChild;
+    const novoInput = document.createElement('input');
+    novoInput.type = 'text';
+    novoInput.value = textoItem.textContent;
+    novoInput.addEventListener('blur', () => salvaEdicao(itemLista, novoInput));
+    textoItem.replaceWith(novoInput);
+}
+
