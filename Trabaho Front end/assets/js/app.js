@@ -1,17 +1,31 @@
-function validaSeExisteaAlgosalvoNoLocalStorageEMostraNaTela() {
-    const localStorage = window.localStorage
-    if (localStorage.getItem('novoAluno','FormNotas','tabela_aluno') != null) {
-        const nãoseiAinda = JSON.parse(localStorage.getItem('Cadastros','FormNotas2','cadastroNotas','tabela_aluno'))
-        nãoseiAinda.daforEach(tarefa => {
-            const nãoseiAinda = document.getElementById('Cadastros','FormNotas2','cadastroNotas','tabela_aluno')
-            
-            if (tarefa.status === 'fechada') {
-               novoItem.style.textDecoration =  'line-through'    
-            }
-            listaTarefnãoseiAinda.appendChild(novoItem)
+function validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela() {
+    const localStorage = window.localStorage;
+    const dadosArmazenados = localStorage.getItem('alunos');
+
+    if (dadosArmazenados != null) {
+        const alunos = JSON.parse(dadosArmazenados);
+        const tabelaAlunos = document.getElementById('tabela_alunos');
+
+        tabelaAlunos.innerHTML = '';
+
+        alunos.forEach(aluno => {
+            const novaLinha = tabelaAlunos.insertRow();
+            novaLinha.insertCell(0).textContent = aluno.nome;
+            novaLinha.insertCell(1).textContent = aluno.ra;
+            novaLinha.insertCell(2).textContent = aluno.email;
+            novaLinha.insertCell(3).textContent = aluno.aep1;
+            novaLinha.insertCell(4).textContent = aluno.integrada1;
+            novaLinha.insertCell(5).textContent = aluno.prova1;
+            novaLinha.insertCell(6).textContent = aluno.aep2;
+            novaLinha.insertCell(7).textContent = aluno.integrada2;
+            novaLinha.insertCell(8).textContent = aluno.prova2;
+            novaLinha.insertCell(9).textContent = aluno.media1;
+            novaLinha.insertCell(10).textContent = aluno.media2;
+
         });
     }
 }
+
 
 function adicionaDadosAluno() {
     const nomeAluno = document.getElementById('input_nome').value;
@@ -112,6 +126,9 @@ function adicionaTabelaLocalStorage(aluno) {
     alunos.push(aluno);
     localStorage.setItem('alunos', JSON.stringify(alunos));
 }
+
+
+validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela()
 
 
 function media1b(prova1b, aep1, provaintegrada1b){
