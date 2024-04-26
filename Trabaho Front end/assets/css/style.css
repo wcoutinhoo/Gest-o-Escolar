@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* Estilo Geral */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Kanit", sans-serif;
 }
 
 body {
@@ -16,9 +18,12 @@ body {
     justify-content: space-around;
     padding: 20px;
 }
+
 .form-containercadastro {
     flex: 1;
     margin: 0 10px;
+    height: 550px;
+    overflow-y: auto;
 }
 
 /* Estilo dos formulários */
@@ -26,18 +31,21 @@ form {
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
-    max-width: 400px; /* Definindo uma largura máxima para o formulário */
-    background-color: rgba(204, 204, 204, 0.7); /* Fundo cinza com opacidade reduzida */
+    max-width: 400px;
+    /* Definindo uma largura máxima para o formulário */
+    background-color: rgba(204, 204, 204, 0.7);
     border-radius: 10px;
     padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.title1{
-   font-size: 1.8em;
-   margin-bottom: 10%;
+.title1 {
+    font-size: 1.8em;
+    margin-bottom: 10%;
 }
 
 form label {
@@ -48,24 +56,42 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="number"],
+
 form button {
     width: 100%;
     padding: 6px;
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 1px solid #ccc;
     font-size: 0.8em;
 }
 
-form button {
-    background-color: #160358;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.botao1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-form button:hover {
+.btn-add {
     background-color: #160358;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #1a065a;
+}
+
+.titulo-tabela h2 {
+    background-color: rgba(204, 204, 204, 0.7);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;    
 }
 
 /* Estilo dos títulos */
@@ -85,9 +111,11 @@ table {
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
+    background-color: rgba(204, 204, 204, 0.7);
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
