@@ -14,18 +14,33 @@ function validaSeExisteaAlgosalvoNoLocalStorageEMostraNaTela() {
 }
 
 
-function adicionaDadosAluno(){
+function adicionaDadosAluno() {
     const nomeAluno = document.getElementById('input_nome').value;
     const raAluno = document.getElementById('input_ra').value;
     const emailAluno = document.getElementById('input_email').value;
+    const alunoaep1 = document.getElementById('input_aep_1').value;
+    const integrada1 = document.getElementById('input_prova_integrada_1').value;
+    const prova1 = document.getElementById('input_prova_1').value;
+    const aep2A = document.getElementById('input_aep_2').value;
+    const integrada2 = document.getElementById('input_prova_integrada_2').value;
+    const prova2 = document.getElementById('input_prova_2').value;
 
-    if((nomeAluno.trim()!= '') && (raAluno.trim()!= '') && (emailAluno.trim()!='')){
-        criaNovoAluno(nomeAluno, raAluno, emailAluno);
-        document.getElementById('input_ra').value='';
-        document.getElementById('input_nome').value='';
-        document.getElementById('input_email').value='';
-    }else{
-        alert('Preencha dados dos alunos');
+
+    if (nomeAluno.trim() !== '' && raAluno.trim() !== '' && emailAluno.trim() !== '' && alunoaep1.trim() !== '' && integrada1.trim() !== '' && prova1.trim() !== '' && aep2A.trim() !== '' && integrada2.trim() !== '' && prova2.trim() !== '') {
+        const aluno = novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1, aep2A, integrada2, prova2);
+        criaNovoAluno(aluno);
+        document.getElementById('input_ra').value = '';
+        document.getElementById('input_nome').value = '';
+        document.getElementById('input_email').value = '';
+        document.getElementById('input_aep_1').value = '';
+        document.getElementById('input_integrada_1').value = '';
+        document.getElementById('input_prova_1').value = '';
+        document.getElementById('input_aep_2').value = '';
+        document.getElementById('input_integrada_2').value = '';
+        document.getElementById('input_prova_2').value = '';
+
+    } else {
+        alert('Preencha os dados do aluno');
     }
 }
 
