@@ -99,6 +99,19 @@ function criaNovoAluno(aluno) {
     adicionaTabelaLocalStorage(aluno);
 }
 
+function adicionaTabelaLocalStorage(aluno) {
+    const localStorage = window.localStorage;
+    let alunos = [];
+
+    if (localStorage.getItem('alunos') !== null) {
+        alunos = JSON.parse(localStorage.getItem('alunos'));
+    }
+
+    alunos.push(aluno);
+    localStorage.setItem('alunos', JSON.stringify(alunos));
+}
+
+
 function media1b(prova1b, aep1, provaintegrada1b){
     const m1 = ((prova1b*0.8)+(aep1*0.1)+(provaintegrada1b*0.1));
     return m1;
