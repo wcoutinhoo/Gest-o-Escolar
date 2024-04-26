@@ -134,4 +134,23 @@ function determinarsituaçao(mediafinal){
     } else {
         return 'Reprovado';
     }
+
+}
+
+function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1, aep2A, integrada2, prova2, m1, m2) {
+    m1 = media1b(parseFloat(prova1), parseFloat(alunoaep1), parseFloat(integrada1));
+    m2 = media2b(parseFloat(prova2), parseFloat(aep2A), parseFloat(integrada2));
+    return {
+        ra: raAluno,
+        nome: nomeAluno,
+        email: emailAluno,
+        aep1: alunoaep1,
+        integrada1: integrada1,
+        prova1: prova1,
+        aep2: aep2A,
+        integrada2: integrada2,
+        prova2: prova2,
+        media1: m1,
+        media2: m2,
+    }
 }
