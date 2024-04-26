@@ -13,19 +13,19 @@ function validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela() {
             novaLinha.insertCell(0).textContent = aluno.nome;
             novaLinha.insertCell(1).textContent = aluno.ra;
             novaLinha.insertCell(2).textContent = aluno.email;
-            novaLinha.insertCell(3).textContent = aluno.aep1;
-            novaLinha.insertCell(4).textContent = aluno.integrada1;
-            novaLinha.insertCell(5).textContent = aluno.prova1;
-            novaLinha.insertCell(6).textContent = aluno.aep2;
-            novaLinha.insertCell(7).textContent = aluno.integrada2;
-            novaLinha.insertCell(8).textContent = aluno.prova2;
+            novaLinha.insertCell(3).textContent = aluno.prova1;
+            novaLinha.insertCell(4).textContent = aluno.aep1;
+            novaLinha.insertCell(5).textContent = aluno.integrada1;
+            novaLinha.insertCell(6).textContent = aluno.prova2;
+            novaLinha.insertCell(7).textContent = aluno.aep2;
+            novaLinha.insertCell(8).textContent = aluno.integrada2;
             novaLinha.insertCell(9).textContent = aluno.media1;
             novaLinha.insertCell(10).textContent = aluno.media2;
-
+            novaLinha.insertCell(11).textContent = aluno.mediaFinal;
+            novaLinha.insertCell(12).textContent = determinarsituaçao(parseFloat(aluno.mediaFinal));
         });
     }
 }
-
 
 
 function adicionaDadosAluno() {
