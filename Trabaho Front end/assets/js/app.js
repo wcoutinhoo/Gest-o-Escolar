@@ -84,13 +84,15 @@ function criaNovoAluno(aluno) {
     prova2Celula.textContent = aluno.prova2;
     novoItem.appendChild(prova2Celula);
 
-    const media1Celula = document.createElement('td');
+     const media1Celula = document.createElement('td');
     media1Celula.textContent = aluno.media1;
     novoItem.appendChild(media1Celula);
 
     const media2Celula = document.createElement('td');
     media2Celula.textContent = aluno.media2;
     novoItem.appendChild(media2Celula);
+
+    
 
     listaAlunos.appendChild(novoItem);
 
