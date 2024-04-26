@@ -173,3 +173,13 @@ function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1
         media2: m2.toFixed(2),
     }
 }
+
+function excluirAluno() {
+        const tabelaAlunos = document.getElementById('tabela_alunos');
+        const alunosArmazenados = JSON.parse(localStorage.getItem('alunos'));
+        const indice = alunosArmazenados.indexOf(aluno);
+
+        alunosArmazenados.splice(indice, 1);
+        localStorage.setItem('alunos', JSON.stringify(alunosArmazenados));
+        tabelaAlunos.deleteRow(linha.rowIndex);
+    }
