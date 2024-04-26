@@ -169,7 +169,7 @@ function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1
         aep2: aep2A,
         integrada2: integrada2,
         prova2: prova2,
-        media1: m1,
-        media2: m2,
+        media1: m1.toFixed(2),
+        media2: m2.toFixed(2),
     }
 }
