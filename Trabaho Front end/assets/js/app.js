@@ -27,6 +27,7 @@ function validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela() {
 }
 
 
+
 function adicionaDadosAluno() {
     const nomeAluno = document.getElementById('input_nome').value;
     const raAluno = document.getElementById('input_ra').value;
@@ -56,7 +57,6 @@ function adicionaDadosAluno() {
         alert('Preencha os dados do aluno');
     }
 }
-
 
 function criaNovoAluno(aluno) {
     const listaAlunos = document.getElementById('tabela_alunos');
@@ -98,15 +98,13 @@ function criaNovoAluno(aluno) {
     prova2Celula.textContent = aluno.prova2;
     novoItem.appendChild(prova2Celula);
 
-     const media1Celula = document.createElement('td');
+    const media1Celula = document.createElement('td');
     media1Celula.textContent = aluno.media1;
     novoItem.appendChild(media1Celula);
 
     const media2Celula = document.createElement('td');
     media2Celula.textContent = aluno.media2;
     novoItem.appendChild(media2Celula);
-
-    
 
     listaAlunos.appendChild(novoItem);
 
@@ -128,32 +126,30 @@ function adicionaTabelaLocalStorage(aluno) {
 }
 
 
-validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela()
 
-
-function media1b(prova1b, aep1, provaintegrada1b){
-    const m1 = ((prova1b*0.8)+(aep1*0.1)+(provaintegrada1b*0.1));
+function media1b(prova1b, aep1, provaintegrada1b) {
+    const m1 = ((prova1b * 0.8) + (aep1 * 0.1) + (provaintegrada1b * 0.1));
     return m1;
 }
 
-function media2b(prova2b, aep2, provaintegrada2b){
-    const m2 = ((prova2b*0.8)+(aep2*0.1)+(provaintegrada2b*0.1));
+function media2b(prova2b, aep2, provaintegrada2b) {
+    const m2 = ((prova2b * 0.8) + (aep2 * 0.1) + (provaintegrada2b * 0.1));
     return m2;
 }
-function mediaFinal(m1, m2){
+
+function mediaFinal(m1, m2) {
     const mediafinal = (Number(m1) + Number(m2)) / 2;
     return mediafinal;
 }
 
-function determinarsituaçao(mediafinal){
+function determinarsituaçao(mediafinal) {
     if (mediafinal >= 6) {
         return 'Aprovado';
-    } else if (mediafinal >=3) {
+    } else if (mediafinal >= 3) {
         return 'Recuperação';
     } else {
         return 'Reprovado';
     }
-
 }
 
 function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1, aep2A, integrada2, prova2, m1, m2) {
@@ -174,12 +170,16 @@ function novoAluno(nomeAluno, raAluno, emailAluno, alunoaep1, integrada1, prova1
     }
 }
 
-function excluirAluno() {
-        const tabelaAlunos = document.getElementById('tabela_alunos');
-        const alunosArmazenados = JSON.parse(localStorage.getItem('alunos'));
-        const indice = alunosArmazenados.indexOf(aluno);
 
-        alunosArmazenados.splice(indice, 1);
-        localStorage.setItem('alunos', JSON.stringify(alunosArmazenados));
-        tabelaAlunos.deleteRow(linha.rowIndex);
-    }
+validaSeExisteDadosdoAlunoNoLocalStorageEMostraNaTela()
+
+
+function excluirAluno() {
+    const tabelaAlunos = document.getElementById('tabela_alunos');
+    const alunosArmazenados = JSON.parse(localStorage.getItem('alunos'));
+    const indice = alunosArmazenados.indexOf(aluno);
+
+    alunosArmazenados.splice(indice, 1);
+    localStorage.setItem('alunos', JSON.stringify(alunosArmazenados));
+    tabelaAlunos.deleteRow(linha.rowIndex);
+}
