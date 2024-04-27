@@ -13,6 +13,12 @@ body {
     background-color: #ffffff;
 }
 
+.img-fundo{
+    background-image: url(/img/Default_faculdade_com_alunos_2.jpg);
+    background-position: top center;
+    background-size: 100%;
+}
+
 .Cadastros {
     display: flex;
     justify-content: space-around;
@@ -32,8 +38,7 @@ form {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
     max-width: 400px;
-    /* Definindo uma largura máxima para o formulário */
-    background-color: rgba(204, 204, 204, 0.7);
+    background-color: rgba(204, 204, 204);
     border-radius: 10px;
     padding: 60px;
     display: flex;
@@ -106,12 +111,17 @@ h2 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+.titulo1 h2{
+    color: #f8f6f6;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    background-color: #492e17;
+}
 table {
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
-    background-color: rgba(204, 204, 204, 0.7);
+    background-color: rgb(204, 204, 204);
 }
 
 th,
