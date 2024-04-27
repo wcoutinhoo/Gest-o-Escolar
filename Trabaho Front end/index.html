@@ -1,67 +1,89 @@
 <!DOCTYPE html>
-    <html lang="pt-br">
-        <head>
-            <meta charset="utf-8" />
-            <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
-            <title>Gestão Escolar </title>
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-            <h1> Cadastro de Alunos</h1>
-            <form id="FormAluno">
-            <label for="input_nome">Nome:</label>
-            <input type="text"  id="input_nome" required><br>
-            <label for="input_email"> E-mail:</label> 
-            <input type="email" id="input_email" required> <br>
-            <label for="input_ra" >RA:</label>
-            <input type="text" id="input_ra" required><br>
-            <button type="submit">Adicionar Aluno</button>
+<html lang='pt-br'>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Gestão Escolar</title>
+    <link rel='stylesheet' href='assets/css/style.css'>
+</head>
+
+<body>
+<div class="img-fundo">
+    <div class="Cadastros">
+        <div id="novoAluno" class="containercadastro">
+            <form id='FormAluno'>
+                <h1 class="title1">Cadastro de Alunos</h1>
+                <label for='input_nome'>Nome:</label>
+                <input type='text' id='input_nome' required><br>
+                <label for='input_email'>E-mail:</label>
+                <input type='email' id='input_email' required><br>
+                <label for='input_ra'>RA:</label>
+                <input type='text' id='input_ra' required><br>
 
             </form>
+        </div>
 
-            <h1> Cadastro de Notas</h1>
-            <form id="FormNotas">
-                <label for="input_prova_1"> Prova 1°  Bimestre:</label>
-                <input type="number" id="input_prova_1"  min="0" max="8" step="0.1" required><br>
-                <label for="input_aep_1"> AEP 1° Bimestre:</label>
-                <input type="number" id="input_aep_1" min="0" max="1" step="0.1" required><br>
-                <label for="input_prova_integrada_1"> Prova Integrada  1° Bimestre:</label>
-                <input type="number" id="input_prova_integrada_1" min="0" max="1" required> <br>
-                <label for="input_prova_2"> Prova 2° Bimestre:</label>
-                <input type="number" id="input_prova_2" min="0" max="8" step="0.1" required> <br>
-                <label for="input_aep_2">AEP 2° Bimestre:</label>
-                <input type="number" id="input_aep_2" min="0" max="1" step="0.1"><br>
-                <label  for="input_prova_integrada_2">Prova Integrada 2° Bimestre:</label>
-                <input type="number" id="input_prova_integrada_2" min="0" max="1" step="0.1" required> <br>
-                <button type="submit">Adicionar Notas</button>
+        <div id="cadastroNotas" class="containercadastro">
+            <form id='FormNotas1'>
+                <h1 class="title1">Cadastro de Notas 1° Bimestre</h1>
+                <label for='input_prova_1'>Prova 1° Bimestre:</label>
+                <input type='number' id='input_prova_1' min='0' max='8' step='0.1' required><br>
+                <label for='input_aep_1'>AEP 1° Bimestre:</label>
+                <input type='number' id='input_aep_1' min='0' max='1' step='0.1' required><br>
+                <label for='input_integrada_1'>Prova Integrada 1° Bimestre:</label>
+                <input type='number' id='input_integrada_1' min='0' max='1' required><br>
+
 
             </form>
+        </div>
+        <div id="cadastroNotas1" class="containercadastro">
+            <form id="FormNotas2">
+                <h1 class="title1">Cadastro de Notas 2° Bimestre</h1>
+                <label for='input_prova_2'>Prova 2° Bimestre:</label>
+                <input type='number' id='input_prova_2' min='0' max='8' step='0.1' required><br>
+                <label for='input_aep_2'>AEP 2° Bimestre:</label>
+                <input type='number' id='input_aep_2' min='0' max='1' step='0.1'><br>
+                <label for='input_integrada_2'>Prova Integrada 2° Bimestre:</label>
+                <input type='number' id='input_integrada_2' min='0' max='1' step='0.1' required><br>
+            </form>
+        </div>
+    </div>
 
-            <h1>Dados dos Alunos</h1>
-            <table id="tabela_aluno">
-                <thead>
-                    <tr>
-                        <th> Nome </th>
-                        <th> RA </th>
-                        <th> Email </th>
-                        <th> Prova 1°  Bimestre </th>
-                        <th> AEP 1° Bimestre </th>
-                        <th> Prova Integrada  1° Bimestre </th>
-                        <th> Prova 2° Bimestre </th>
-                        <th> AEP 2° Bimestre </th>
-                        <th> Prova Integrada 2° Bimestre </th>
-                        <th> Média 1° Bimestre</th>
-                        <th> Média 2° Bimestre</th>
-                        <th> Média Final </th>
-                        <th>  Situação </th>
-                        <th> Ações </th>
-                        </tr>
-                </thead>
-                <tbody>
+    <div class="botao1">
+        <button class="btn-add" onclick="adicionaDadosAluno()">Adicionar Alunos</button>
+    </div>
 
-                </tbody>
-            </table>
-            <script src="script.js" ></script>
-            </body>
-    </html>
+
+    
+
+    <table id='cabeca_aluno'>
+</div>  
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>RA</th>
+                <th>Email</th>
+                <th>Prova 1° Bimestre</th>
+                <th>AEP 1° Bimestre</th>
+                <th>Prova Integrada 1° Bimestre</th>
+                <th>Prova 2° Bimestre</th>
+                <th>AEP 2° Bimestre</th>
+                <th>Prova Integrada 2° Bimestre</th>
+                <th>Média 1° Bimestre</th>
+                <th>Média 2° Bimestre</th>
+                <th>Média Final</th>
+                <th>Situação</th>
+                <th>Ações</th>
+                <th id='media_geral_turma'> Média geral</th>
+            </tr>
+        </thead>
+        <tbody id='tabela_alunos'>
+
+        </tbody>
+    </table>
+
+    <script src='assets/js/app.js'></script>
+</body>
+
+</html>
