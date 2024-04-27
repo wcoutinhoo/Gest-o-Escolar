@@ -152,6 +152,20 @@ function mediaFinal(m1, m2) {
     return mediafinal;
 }
 
+function mediaGeral() {
+    const alunosArmazenados=JSON.parse(localStorage.getItem('alunos'));
+    if (alunosArmazenados && alunosArmazenados.length>0) {
+    let totalMediaGeral=0;
+    alunosArmazenados.forEach(aluno=> {
+        totalMediaGeral += parseFloat(aluno.mediaFinal)
+    });
+const mediaGeral=totalMediaGeral/alunosArmazenados.lenght;
+return mediaGeral.toFixed(2);
+}else{
+    return 0;
+}
+    }
+
 function determinarsituaçao(mediafinal) {
     if (mediafinal >= 6) {
         return 'Aprovado';
